@@ -1,0 +1,19 @@
+{% include "layout.html" %}
+
+{% block body %}
+<h1 align="center">Chatbot</h1>
+
+{% for msg in messages %}
+<div class="message">
+    <p class="user-message">{{ msg.user }}</p>
+    <p class="bot-message">{{ msg.bot }}</p>
+</div>
+{% endfor %}
+
+
+<form method="POST" align="center">
+    <textarea name="user-input" rows="4" cols="50">{{ user_input }}</textarea><br>
+    <input type="submit" value="Send" class="btn btn-primary">
+</form>
+
+{% endblock %}
